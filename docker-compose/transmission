@@ -1,0 +1,19 @@
+---
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Santiago
+      - USER=torrent #optional
+      - PASS=alfredo13 #optional
+    volumes:
+      - /configs/transmission:/config
+      - /transmission/downloads:/downloads
+      - /transmission/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp

@@ -1,6 +1,39 @@
 ---
 services:
-  flexget:
+  plex: #instala plex
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plexmediaserver
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Santiago
+      - VERSION=docker
+    volumes:
+      - /srv/dev-disk-by-uuid-e66deb63-a199-4385-970e-785ba1405328/plex-library/config:/config
+      - /srv/dev-disk-by-uuid-e66deb63-a199-4385-970e-785ba1405328/plex-library/series:/tv
+      - /srv/dev-disk-by-uuid-e66deb63-a199-4385-970e-785ba1405328/plex-library/peliculas:/movies
+    restart: unless-stopped
+  
+  transmission: #instala transmission
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Santiago
+      - USER=torrent #optional
+      - PASS=alfredo13 #optional
+    volumes:
+      - /configs/transmission:/config
+      - /transmission/downloads:/downloads
+      - /transmission/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+  
+  flexget: #instala flexget
     image: lscr.io/linuxserver/flexget:latest
     container_name: flexget
     environment:
