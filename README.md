@@ -57,8 +57,6 @@ Como recomendación inicial, actualizar el sistema con los siguientes comandos:
 apt update Actualizar lista de paquetes actualizables
 apt upgrade ejecutar actualzación
 ```
-
-
 Para terminar la configuración vamos a seguir los siguientes pasos.
 
 1. Acceder a la interfaz web segun la dirección asignada por tu router: "https://X.X.X.X:80".
@@ -71,6 +69,6 @@ Para terminar la configuración vamos a seguir los siguientes pasos.
 8. 
 9. 
 
-## Instalación de plugin OMV-Extras y puesta en marcha
+## Instalación de plugin OMV-Extras y puesta en marcha XXXXX
 
 
