@@ -53,10 +53,10 @@ Para acceder al sistema base de debian se debe utilizar "root" y la contraseña 
 
 Como recomendación inicial, actualizar el sistema con los siguientes comandos: 
 
-´´´
+```
 apt update #Actualizar lista de paquetes actualizables
 apt upgrade #ejecutar actualzación
-´´´
+```
 
 
 Para terminar la configuración vamos a seguir los siguientes pasos.
